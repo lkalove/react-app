@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App.css';
-import '../card_list.css';
+import '../stylesheets/App.css';
+import '../stylesheets/card_list.css';
 import CardList from './card_list';
 
 export default class App extends React.Component {

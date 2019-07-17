@@ -1,7 +1,7 @@
 
 .filter {
   line-height: 24px;
-  font-family: AppleSDGothicNeo;
+  font-family: 'Apple SD Gothic Neo';
   font-size: 15px;
   font-weight: normal;
   font-style: normal;
@@ -21,11 +21,11 @@
 }
 
 .filter .check-scrap.enabled {
-  background-image: url('assets/icons/bt-checkbox-checked.png');
+  background-image: url('../assets/icons/bt-checkbox-checked.png');
 }
 
 .filter .check-scrap.disabled {
-  background-image: url('assets/icons/bt-checkbox-unchecked.png');
+  background-image: url('../assets/icons/bt-checkbox-unchecked.png');
 }
 
 .card {
@@ -41,7 +41,7 @@
 }
 
 .card .user span {
-  font-family: AppleSDGothicNeo;
+  font-family: 'Apple SD Gothic Neo';
   font-size: 15px;
   font-weight: bold;
   font-style: normal;
@@ -72,11 +72,11 @@
 }
 
 .card .image .scrap.on {
-  background-image: url('assets/icons/scrap-on.png');
+  background-image: url('../assets/icons/scrap-on.png');
 }
 
 .card .image .scrap.off {
-  background-image: url('assets/icons/scrap-off.png');
+  background-image: url('../assets/icons/scrap-off.png');
 }
 
 .card .image .scrap {

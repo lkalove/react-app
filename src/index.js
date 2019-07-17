@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-import './index.css';
-import './card_list.css';
+import './stylesheets/index.css';
 import App from './components/App';
 import storeApp from './components/redux/reducers';
 import * as serviceWorker from './serviceWorker';
