@@ -35,6 +35,10 @@ export default class extends React.Component {
   }
 
   handleScroll() {
+    const { is_last } = this.state;
+    // API로 데이터를 가져오는 경우는 페이지 정보를 토대로 마지막 페이지이면 더이상 불러오지 않는다.
+    if (is_last) return;
+
     const { innerHeight } = window;
     const { scrollHeight, scrollTop } = document.body;
     const { documentElement } = document; //for IE
@@ -50,15 +54,14 @@ export default class extends React.Component {
   getImages() {
     const { page } = this.state;
 
-    // API로 데이터를 가져오는 경우는 페이지 정보를 토대로 마지막 페이지이면 더이상 불러오지 않는다.
-
     let url = "https://s3.ap-northeast-2.amazonaws.com/bucketplace-coding-test/cards/page_" + page + ".json";
     $.ajax({method: 'GET', url: url}).then((response) => {
       if (response.length > 0) {
-        // 지금은 응답 데이터 유무로 마지막 페이지여부를 판단하지만
-        // 실제로는 서버에서 내려주는 페이지 갯수로 판단하여 api 요청 자체를 하지 않아야 한다.
         // 페이지 로딩 후 다음에 가져올 페이지로 변경
+        if (this.state.page > page) return; // 타이밍 때문에 현재 페이지 다음것이 이미 가져와졌다면 리턴
         this.setState({cardList: this.state.cardList.concat(response), page: page + 1});
+      } else {
+        this.setState({is_last: true});
       }
     });
   }
